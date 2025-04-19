@@ -1,0 +1,158 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" style="background-color: #f0f0f0; font-family: 'Segoe UI', Arial, sans-serif;">
+
+  <!-- Page Title -->
+  <text x="40" y="45" font-size="24" font-weight="bold" fill="#333">Page 2: Engagement, Performance & Compensation</text>
+
+  <!-- Tooltip Legend -->
+  <rect x="1050" y="35" width="200" height="25" fill="none" stroke="#555" stroke-dasharray="3, 3"/>
+  <text x="1055" y="52" font-size="10" fill="#555">Dashed border = Custom Tooltip on Hover</text>
+
+
+  <!-- Slicer Panel (Left Side - Consistent Placement) -->
+  <rect x="20" y="80" width="200" height="620" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+  <text x="35" y="110" font-size="14" font-weight="bold" fill="#555">FILTERS</text>
+  <rect x="35" y="130" width="170" height="30" fill="#e9e9e9" rx="3" ry="3"/>
+  <text x="45" y="150" font-size="12" fill="#333">Department Slicer</text>
+  <rect x="35" y="175" width="170" height="30" fill="#e9e9e9" rx="3" ry="3"/>
+  <text x="45" y="195" font-size="12" fill="#333">Job Role Slicer</text>
+  <rect x="35" y="220" width="170" height="30" fill="#e9e9e9" rx="3" ry="3"/>
+  <text x="45" y="240" font-size="12" fill="#333">Gender Slicer</text>
+  <rect x="35" y="265" width="170" height="30" fill="#e9e9e9" rx="3" ry="3"/>
+  <text x="45" y="285" font-size="12" fill="#333">Job Level Slicer</text>
+
+  <!-- KPI/Gauge Row -->
+  <g id="kpi-gauge-row">
+    <rect x="250" y="80" width="180" height="80" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="260" y="105" font-size="12" fill="#555">Avg Job Satisfaction</text>
+    <text x="260" y="140" font-size="24" font-weight="bold" fill="#008000">[Avg Score]</text>
+    <path d="M 310 140 A 40 40 0 0 0 390 140" stroke="#008000" stroke-width="8" fill="none"/>
+
+    <rect x="450" y="80" width="180" height="80" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="460" y="105" font-size="12" fill="#555">Avg Env Satisfaction</text>
+    <text x="460" y="140" font-size="24" font-weight="bold" fill="#008000">[Avg Score]</text>
+    <path d="M 510 140 A 40 40 0 0 0 590 140" stroke="#008000" stroke-width="8" fill="none"/>
+
+    <rect x="650" y="80" width="180" height="80" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="660" y="105" font-size="12" fill="#555">Avg Work Life Balance</text>
+    <text x="660" y="140" font-size="24" font-weight="bold" fill="#E69900">[Avg Score]</text>
+    <path d="M 710 140 A 40 40 0 0 0 790 140" stroke="#E69900" stroke-width="8" fill="none"/>
+
+    <rect x="850" y="80" width="180" height="80" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="860" y="105" font-size="12" fill="#555">Avg Performance</text>
+    <text x="860" y="140" font-size="24" font-weight="bold" fill="#007ACC">[Avg Score]</text>
+    <path d="M 910 140 A 40 40 0 0 0 990 140" stroke="#007ACC" stroke-width="8" fill="none"/>
+
+    <rect x="1050" y="80" width="180" height="80" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="1060" y="105" font-size="12" fill="#555">Avg Monthly Income</text>
+    <text x="1060" y="140" font-size="24" font-weight="bold" fill="#333">[Currency]</text>
+  </g>
+
+  <!-- Central Matrix / Heatmap -->
+  <g id="central-matrix">
+    <rect x="250" y="180" width="680" height="350" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="260" y="205" font-size="14" font-weight="bold" fill="#333">Engagement & Performance Matrix (by Department)</text>
+    <!-- Header Row -->
+    <rect x="260" y="230" width="120" height="30" fill="#e0e0e0"/>
+    <text x="265" y="250" font-size="11" font-weight="bold">Department</text>
+
+    <!-- Avg Job Sat Header (Tooltip Applied) -->
+    <rect x="380" y="230" width="70" height="30" fill="#e0e0e0" stroke="#555" stroke-width="1" stroke-dasharray="4, 4"/>
+    <text x="385" y="250" font-size="11" font-weight="bold">Avg Job Sat</text>
+
+    <!-- Avg Env Sat Header (Tooltip Applied) -->
+    <rect x="450" y="230" width="70" height="30" fill="#e0e0e0" stroke="#555" stroke-width="1" stroke-dasharray="4, 4"/>
+    <text x="455" y="250" font-size="11" font-weight="bold">Avg Env Sat</text>
+
+    <!-- Avg WLB Header (Tooltip Applied) -->
+    <rect x="520" y="230" width="70" height="30" fill="#e0e0e0" stroke="#555" stroke-width="1" stroke-dasharray="4, 4"/>
+    <text x="525" y="250" font-size="11" font-weight="bold">Avg WLB</text>
+
+    <!-- Other Headers (No Tooltip) -->
+    <rect x="590" y="230" width="70" height="30" fill="#e0e0e0"/>
+    <text x="595" y="250" font-size="11" font-weight="bold">Avg Perf</text>
+    <rect x="660" y="230" width="80" height="30" fill="#e0e0e0"/>
+    <text x="665" y="250" font-size="11" font-weight="bold">Avg Income</text>
+    <rect x="740" y="230" width="70" height="30" fill="#e0e0e0"/>
+    <text x="745" y="250" font-size="11" font-weight="bold">Attr Rate</text>
+    <rect x="810" y="230" width="110" height="30" fill="#e0e0e0"/>
+    <text x="815" y="250" font-size="11" font-weight="bold">Emp Count</text>
+
+    <!-- Data Rows (Simplified Heatmap Representation) -->
+    <text x="265" y="280" font-size="11">Sales</text>
+    <rect x="380" y="260" width="70" height="30" fill="#F4CCCC"/> <!-- Low Sat -->
+    <rect x="450" y="260" width="70" height="30" fill="#FFF2CC"/> <!-- Med Env Sat -->
+    <rect x="520" y="260" width="70" height="30" fill="#F4CCCC"/> <!-- Low WLB -->
+    <rect x="590" y="260" width="70" height="30" fill="#D9EAD3"/> <!-- High Perf -->
+    <rect x="660" y="260" width="80" height="30" fill="#CFE2F3"/> <!-- Med Income -->
+    <rect x="740" y="260" width="70" height="30" fill="#EA9999"/> <!-- High Attr -->
+    <text x="815" y="280" font-size="11">[Count]</text>
+
+    <text x="265" y="310" font-size="11">R&D</text>
+    <rect x="380" y="290" width="70" height="30" fill="#D9EAD3"/> <!-- High Sat -->
+    <rect x="450" y="290" width="70" height="30" fill="#D9EAD3"/> <!-- High Env Sat -->
+    <rect x="520" y="290" width="70" height="30" fill="#FFF2CC"/> <!-- Med WLB -->
+    <rect x="590" y="290" width="70" height="30" fill="#D9EAD3"/> <!-- High Perf -->
+    <rect x="660" y="290" width="80" height="30" fill="#D9EAD3"/> <!-- High Income -->
+    <rect x="740" y="290" width="70" height="30" fill="#B6D7A8"/> <!-- Low Attr -->
+     <text x="815" y="310" font-size="11">[Count]</text>
+
+     <text x="265" y="340" font-size="11">HR</text>
+    <rect x="380" y="320" width="70" height="30" fill="#FFF2CC"/> <!-- Med Sat -->
+    <rect x="450" y="320" width="70" height="30" fill="#FFF2CC"/> <!-- Med Env Sat -->
+    <rect x="520" y="320" width="70" height="30" fill="#D9EAD3"/> <!-- High WLB -->
+    <rect x="590" y="320" width="70" height="30" fill="#CFE2F3"/> <!-- Med Perf -->
+    <rect x="660" y="320" width="80" height="30" fill="#F4CCCC"/> <!-- Low Income -->
+    <rect x="740" y="320" width="70" height="30" fill="#FFF2CC"/> <!-- Med Attr -->
+     <text x="815" y="340" font-size="11">[Count]</text>
+     <!-- Add more rows -->
+  </g>
+
+  <!-- Supporting Charts -->
+  <g id="supporting-charts">
+    <!-- Compensation Progression -->
+    <rect x="950" y="180" width="280" height="170" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="960" y="205" font-size="14" font-weight="bold" fill="#333">Avg Income by Job Level</text>
+    <line x1="970" y1="330" x2="1210" y2="330" stroke="#a0a0a0"/>
+    <line x1="970" y1="225" x2="970" y2="330" stroke="#a0a0a0"/>
+    <polyline points="990,310 1040,280 1090,250 1140,235 1190,230" fill="none" stroke="#007ACC" stroke-width="3"/>
+    <text x="990" y="320" font-size="10">L1</text>
+    <text x="1040" y="320" font-size="10">L2</text>
+    <text x="1090" y="320" font-size="10">L3</text>
+    <text x="1140" y="320" font-size="10">L4</text>
+    <text x="1190" y="320" font-size="10">L5</text>
+
+    <!-- Pay for Performance -->
+    <rect x="950" y="370" width="280" height="160" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="960" y="395" font-size="14" font-weight="bold" fill="#333">Avg % Salary Hike by Perf Rating</text>
+    <line x1="970" y1="510" x2="1210" y2="510" stroke="#a0a0a0"/>
+    <line x1="970" y1="415" x2="970" y2="510" stroke="#a0a0a0"/>
+    <rect x="990" y="480" width="40" height="30" fill="#a0a0a0"/>
+    <text x="995" y="500" font-size="10">Low</text>
+    <rect x="1045" y="460" width="40" height="50" fill="#a0a0a0"/>
+    <text x="1050" y="500" font-size="10">Good</text>
+    <rect x="1100" y="440" width="40" height="70" fill="#a0a0a0"/>
+     <text x="1105" y="500" font-size="10">Excel</text>
+    <rect x="1155" y="425" width="40" height="85" fill="#a0a0a0"/>
+     <text x="1160" y="500" font-size="10">Outst</text>
+
+    <!-- Satisfaction Distribution -->
+    <rect x="250" y="550" width="980" height="150" fill="#ffffff" stroke="#d0d0d0" rx="5" ry="5"/>
+    <text x="260" y="575" font-size="14" font-weight="bold" fill="#333">Job Satisfaction Distribution</text>
+    <line x1="280" y1="680" x2="1210" y2="680" stroke="#a0a0a0"/>
+    <line x1="280" y1="595" x2="280" y2="680" stroke="#a0a0a0"/>
+    <rect x="320" y="650" width="150" height="30" fill="#F4CCCC"/>
+    <text x="330" y="670" font-size="10">Low</text>
+     <rect x="520" y="630" width="150" height="50" fill="#FFF2CC"/>
+    <text x="530" y="670" font-size="10">Medium</text>
+     <rect x="720" y="600" width="150" height="80" fill="#D9EAD3"/>
+     <text x="730" y="670" font-size="10">High</text>
+     <rect x="920" y="610" width="150" height="70" fill="#B6D7A8"/>
+     <text x="930" y="670" font-size="10">Very High</text>
+     <rect x="1100" y="600" width="15" height="15" fill="#007ACC"/>
+     <text x="1120" y="612" font-size="10">Legend Item 1</text>
+     <rect x="1100" y="620" width="15" height="15" fill="#a0a0a0"/>
+     <text x="1120" y="632" font-size="10">Legend Item 2</text>
+
+  </g>
+
+</svg>

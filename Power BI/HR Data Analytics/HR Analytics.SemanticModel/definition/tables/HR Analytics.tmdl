@@ -1,10 +1,6 @@
 table 'HR Analytics'
 	lineageTag: 3dc50488-e70d-4ee9-b9ec-9d7882ab0205
 
-	measure 'Total Employees' = COUNTROWS('HR Analytics')
-		formatString: 0
-		lineageTag: eea6e9f1-f92e-4d68-b8ca-91daef664e00
-
 	column Age
 		dataType: int64
 		formatString: 0
@@ -354,19 +350,25 @@ table 'HR Analytics'
 
 	column DepartmentKey
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: c6beecf8-081c-4994-8fa4-08227dae5057
 		summarizeBy: none
 		sourceColumn: DepartmentKey
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column JobRoleKey
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 8e4086cf-3b43-40be-aa7a-b4a6e70af41c
 		summarizeBy: none
 		sourceColumn: JobRoleKey
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

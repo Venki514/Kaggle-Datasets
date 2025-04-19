@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBIDesktopVersion = 2.141.1754.0 (25.03)+e4409ed908ce97a5e9747f7dc48da475cf1c71a2
 
-annotation PBI_QueryOrder = ["HR Analytics","DimDepartment","DimJobRole","HR_Analytics_Staging"]
+annotation PBI_QueryOrder = ["HR Analytics","DimDepartment","DimJobRole","HR_Analytics_Staging","_Measures"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -18,6 +18,7 @@ ref table 'HR Analytics'
 ref table DimDepartment
 ref table DimJobRole
 ref table HR_Analytics_Staging
+ref table _Measures
 
 ref cultureInfo en-US
 
