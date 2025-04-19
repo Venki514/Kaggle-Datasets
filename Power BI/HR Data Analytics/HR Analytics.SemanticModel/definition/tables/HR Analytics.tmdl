@@ -1,27 +1,24 @@
 table 'HR Analytics'
 	lineageTag: 3dc50488-e70d-4ee9-b9ec-9d7882ab0205
 
-	column EmpID
-		dataType: string
-		lineageTag: 268ddfec-8d0d-4406-8922-bea666fa90a2
-		summarizeBy: none
-		sourceColumn: EmpID
-
-		annotation SummarizationSetBy = Automatic
+	measure 'Total Employees' = COUNTROWS('HR Analytics')
+		formatString: 0
+		lineageTag: eea6e9f1-f92e-4d68-b8ca-91daef664e00
 
 	column Age
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 1aabce61-c76c-4192-be62-7cca07df6d4d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Age
 
 		annotation SummarizationSetBy = Automatic
 
-	column AgeGroup
+	column 'Age Group'
 		dataType: string
 		lineageTag: 20900840-b4a1-4e16-97a2-4fbb8fa140b5
 		summarizeBy: none
-		sourceColumn: AgeGroup
+		sourceColumn: Age Group
 
 		annotation SummarizationSetBy = Automatic
 
@@ -33,19 +30,20 @@ table 'HR Analytics'
 
 		annotation SummarizationSetBy = Automatic
 
-	column BusinessTravel
+	column 'Business Travel'
 		dataType: string
 		lineageTag: 96f86332-53c5-45d8-b8b1-77c6fa0b6756
 		summarizeBy: none
-		sourceColumn: BusinessTravel
+		sourceColumn: Business Travel
 
 		annotation SummarizationSetBy = Automatic
 
-	column DailyRate
-		dataType: string
+	column 'Daily Rate'
+		dataType: int64
+		formatString: 0
 		lineageTag: 5c3a64bd-2668-4d90-b2a8-4e963c84e39e
-		summarizeBy: none
-		sourceColumn: DailyRate
+		summarizeBy: sum
+		sourceColumn: Daily Rate
 
 		annotation SummarizationSetBy = Automatic
 
@@ -57,51 +55,46 @@ table 'HR Analytics'
 
 		annotation SummarizationSetBy = Automatic
 
-	column DistanceFromHome
-		dataType: string
+	column 'Distance From Home'
+		dataType: int64
+		formatString: 0
 		lineageTag: dc53cee1-d599-4cc4-971e-86e1d3d66a56
-		summarizeBy: none
-		sourceColumn: DistanceFromHome
+		summarizeBy: sum
+		sourceColumn: Distance From Home
 
 		annotation SummarizationSetBy = Automatic
 
 	column Education
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 73883d2c-3ce1-4c80-a988-c08d327bc5a0
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Education
 
 		annotation SummarizationSetBy = Automatic
 
-	column EducationField
+	column 'Education Field'
 		dataType: string
 		lineageTag: a9304b40-1330-4288-8eae-1a1686a68ad0
 		summarizeBy: none
-		sourceColumn: EducationField
+		sourceColumn: Education Field
 
 		annotation SummarizationSetBy = Automatic
 
-	column EmployeeCount
-		dataType: string
-		lineageTag: 967c2fd4-3aae-4598-ad50-0dd93bbd192e
-		summarizeBy: none
-		sourceColumn: EmployeeCount
-
-		annotation SummarizationSetBy = Automatic
-
-	column EmployeeNumber
+	column 'Employee Number'
 		dataType: string
 		lineageTag: d65a413a-3962-4f55-a0f3-6c1715587495
 		summarizeBy: none
-		sourceColumn: EmployeeNumber
+		sourceColumn: Employee Number
 
 		annotation SummarizationSetBy = Automatic
 
-	column EnvironmentSatisfaction
-		dataType: string
+	column 'Environment Satisfaction'
+		dataType: int64
+		formatString: 0
 		lineageTag: 072b0e78-fc5f-4df4-88eb-2a0c235d0c27
-		summarizeBy: none
-		sourceColumn: EnvironmentSatisfaction
+		summarizeBy: sum
+		sourceColumn: Environment Satisfaction
 
 		annotation SummarizationSetBy = Automatic
 
@@ -113,195 +106,263 @@ table 'HR Analytics'
 
 		annotation SummarizationSetBy = Automatic
 
-	column HourlyRate
-		dataType: string
+	column 'Hourly Rate'
+		dataType: int64
+		formatString: 0
 		lineageTag: 45a8054c-f4d5-4fb7-9937-c9741e3fddfa
-		summarizeBy: none
-		sourceColumn: HourlyRate
+		summarizeBy: sum
+		sourceColumn: Hourly Rate
 
 		annotation SummarizationSetBy = Automatic
 
-	column JobInvolvement
-		dataType: string
+	column 'Job Involvement'
+		dataType: int64
+		formatString: 0
 		lineageTag: c6ce0e46-f826-415d-b765-ab4d178a5401
-		summarizeBy: none
-		sourceColumn: JobInvolvement
+		summarizeBy: sum
+		sourceColumn: Job Involvement
 
 		annotation SummarizationSetBy = Automatic
 
-	column JobLevel
-		dataType: string
+	column 'Job Level'
+		dataType: int64
+		formatString: 0
 		lineageTag: 9cd5cbcf-4296-4d9a-9e51-62faf1fc1833
-		summarizeBy: none
-		sourceColumn: JobLevel
+		summarizeBy: sum
+		sourceColumn: Job Level
 
 		annotation SummarizationSetBy = Automatic
 
-	column JobRole
+	column 'Job Role'
 		dataType: string
 		lineageTag: 20aa2e87-99c1-4c32-988c-a90d65b03a20
 		summarizeBy: none
-		sourceColumn: JobRole
+		sourceColumn: Job Role
 
 		annotation SummarizationSetBy = Automatic
 
-	column JobSatisfaction
-		dataType: string
+	column 'Job Satisfaction'
+		dataType: int64
+		formatString: 0
 		lineageTag: 61ac85a4-9286-408c-9cef-5692881b1fbc
-		summarizeBy: none
-		sourceColumn: JobSatisfaction
+		summarizeBy: sum
+		sourceColumn: Job Satisfaction
 
 		annotation SummarizationSetBy = Automatic
 
-	column MaritalStatus
+	column 'Marital Status'
 		dataType: string
 		lineageTag: 54742e13-3e76-4055-ac3a-04f30f12c186
 		summarizeBy: none
-		sourceColumn: MaritalStatus
+		sourceColumn: Marital Status
 
 		annotation SummarizationSetBy = Automatic
 
-	column MonthlyIncome
-		dataType: string
+	column 'Monthly Income'
+		dataType: int64
+		formatString: 0
 		lineageTag: 81a0cd2d-c41e-44a6-86dc-82219315b7fd
-		summarizeBy: none
-		sourceColumn: MonthlyIncome
+		summarizeBy: sum
+		sourceColumn: Monthly Income
 
 		annotation SummarizationSetBy = Automatic
 
-	column SalarySlab
+	column 'Salary Slab'
 		dataType: string
 		lineageTag: 9978fb4f-3d11-4b68-928d-f310fdd65504
 		summarizeBy: none
-		sourceColumn: SalarySlab
+		sourceColumn: Salary Slab
 
 		annotation SummarizationSetBy = Automatic
 
-	column MonthlyRate
-		dataType: string
+	column 'Monthly Rate'
+		dataType: int64
+		formatString: 0
 		lineageTag: b3613978-3659-49b1-85d5-c2591c680f43
-		summarizeBy: none
-		sourceColumn: MonthlyRate
+		summarizeBy: sum
+		sourceColumn: Monthly Rate
 
 		annotation SummarizationSetBy = Automatic
 
-	column NumCompaniesWorked
-		dataType: string
+	column 'Number Companies Worked'
+		dataType: int64
+		formatString: 0
 		lineageTag: 264b9dc0-6f3c-49e9-87c6-7f81ce373add
-		summarizeBy: none
-		sourceColumn: NumCompaniesWorked
+		summarizeBy: sum
+		sourceColumn: Number Companies Worked
 
 		annotation SummarizationSetBy = Automatic
 
-	column Over18
-		dataType: string
-		lineageTag: 963d2214-2979-467d-9aab-809a81030ead
-		summarizeBy: none
-		sourceColumn: Over18
-
-		annotation SummarizationSetBy = Automatic
-
-	column OverTime
+	column 'Over Time'
 		dataType: string
 		lineageTag: 891544ff-658d-4d91-9bca-19081ce5e657
 		summarizeBy: none
-		sourceColumn: OverTime
+		sourceColumn: Over Time
 
 		annotation SummarizationSetBy = Automatic
 
-	column PercentSalaryHike
-		dataType: string
+	column 'Percent Salary Hike'
+		dataType: double
 		lineageTag: 0bc4a248-1758-4002-9127-b7b669844463
-		summarizeBy: none
-		sourceColumn: PercentSalaryHike
+		summarizeBy: sum
+		sourceColumn: Percent Salary Hike
 
 		annotation SummarizationSetBy = Automatic
 
-	column PerformanceRating
-		dataType: string
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Performance Rating'
+		dataType: int64
+		formatString: 0
 		lineageTag: 3c25cd47-1b09-4e35-9606-39e59410c0f9
-		summarizeBy: none
-		sourceColumn: PerformanceRating
+		summarizeBy: sum
+		sourceColumn: Performance Rating
 
 		annotation SummarizationSetBy = Automatic
 
-	column RelationshipSatisfaction
-		dataType: string
+	column 'Relationship Satisfaction'
+		dataType: int64
+		formatString: 0
 		lineageTag: 0290c677-1e72-4c12-9788-8ed88dc89a46
-		summarizeBy: none
-		sourceColumn: RelationshipSatisfaction
+		summarizeBy: sum
+		sourceColumn: Relationship Satisfaction
 
 		annotation SummarizationSetBy = Automatic
 
-	column StandardHours
-		dataType: string
-		lineageTag: 5056f7ef-db56-47bd-b783-f69ee425e6c8
-		summarizeBy: none
-		sourceColumn: StandardHours
-
-		annotation SummarizationSetBy = Automatic
-
-	column StockOptionLevel
-		dataType: string
+	column 'Stock Option Level'
+		dataType: int64
+		formatString: 0
 		lineageTag: 40ccf9a5-61a5-4b3c-9c1e-ca0d940ff8e0
-		summarizeBy: none
-		sourceColumn: StockOptionLevel
+		summarizeBy: sum
+		sourceColumn: Stock Option Level
 
 		annotation SummarizationSetBy = Automatic
 
-	column TotalWorkingYears
-		dataType: string
+	column 'Total Working Years'
+		dataType: int64
+		formatString: 0
 		lineageTag: 0b1dbf1d-3667-40b6-83ba-047f8bda0c63
-		summarizeBy: none
-		sourceColumn: TotalWorkingYears
+		summarizeBy: sum
+		sourceColumn: Total Working Years
 
 		annotation SummarizationSetBy = Automatic
 
-	column TrainingTimesLastYear
-		dataType: string
+	column 'Training Times Last Year'
+		dataType: int64
+		formatString: 0
 		lineageTag: 1f958e3c-dc64-4860-8e99-c5e832093657
-		summarizeBy: none
-		sourceColumn: TrainingTimesLastYear
+		summarizeBy: sum
+		sourceColumn: Training Times Last Year
 
 		annotation SummarizationSetBy = Automatic
 
-	column WorkLifeBalance
-		dataType: string
+	column 'Work Life Balance'
+		dataType: int64
+		formatString: 0
 		lineageTag: 00b05ea1-d318-44ea-b1d5-881e250901ac
-		summarizeBy: none
-		sourceColumn: WorkLifeBalance
+		summarizeBy: sum
+		sourceColumn: Work Life Balance
 
 		annotation SummarizationSetBy = Automatic
 
-	column YearsAtCompany
-		dataType: string
+	column 'Years At Company'
+		dataType: int64
+		formatString: 0
 		lineageTag: 800a746a-a457-41f2-ab98-0955cecf449e
-		summarizeBy: none
-		sourceColumn: YearsAtCompany
+		summarizeBy: sum
+		sourceColumn: Years At Company
 
 		annotation SummarizationSetBy = Automatic
 
-	column YearsInCurrentRole
-		dataType: string
+	column 'Years In Current Role'
+		dataType: int64
+		formatString: 0
 		lineageTag: 7852373e-05f9-43c8-8e8a-1d3185b25687
-		summarizeBy: none
-		sourceColumn: YearsInCurrentRole
+		summarizeBy: sum
+		sourceColumn: Years In Current Role
 
 		annotation SummarizationSetBy = Automatic
 
-	column YearsSinceLastPromotion
-		dataType: string
+	column 'Years Since Last Promotion'
+		dataType: int64
+		formatString: 0
 		lineageTag: ad271cdf-0376-492f-8502-1a86dd5a60ff
-		summarizeBy: none
-		sourceColumn: YearsSinceLastPromotion
+		summarizeBy: sum
+		sourceColumn: Years Since Last Promotion
 
 		annotation SummarizationSetBy = Automatic
 
-	column YearsWithCurrManager
-		dataType: string
+	column 'Years With Current Manager'
+		dataType: double
 		lineageTag: 7f1698e9-44e6-46c6-b16b-aa98b0f48fc5
+		summarizeBy: sum
+		sourceColumn: Years With Current Manager
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Attrition Status'
+		dataType: string
+		lineageTag: 421eff6b-839c-47e4-b8bb-ff29adf2fabb
 		summarizeBy: none
-		sourceColumn: YearsWithCurrManager
+		sourceColumn: Attrition Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Over Time Status'
+		dataType: string
+		lineageTag: 9761576a-e031-4331-8374-b8a1e73d1ae8
+		summarizeBy: none
+		sourceColumn: Over Time Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenure Group'
+		dataType: string
+		lineageTag: c37294eb-fd12-40e9-b922-c76d305023f9
+		summarizeBy: none
+		sourceColumn: Tenure Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Satisfaction Category'
+		dataType: string
+		lineageTag: c2899115-096d-4c90-a300-be7515999091
+		summarizeBy: none
+		sourceColumn: Job Satisfaction Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Environment Satisfaction Category'
+		dataType: string
+		lineageTag: c387573d-638b-4ae9-9682-ce20e08d9768
+		summarizeBy: none
+		sourceColumn: Environment Satisfaction Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relationship Satisfaction Category'
+		dataType: string
+		lineageTag: c3cb101a-c54b-4867-a1fe-c2be087b8944
+		summarizeBy: none
+		sourceColumn: Relationship Satisfaction Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Life Balance Category'
+		dataType: string
+		lineageTag: 8dbe043b-88f2-43cb-9921-a1e3f1779adf
+		summarizeBy: none
+		sourceColumn: Work Life Balance Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Performance Rating Category'
+		dataType: string
+		lineageTag: e608313c-34c8-455a-859d-17738a530970
+		summarizeBy: none
+		sourceColumn: Performance Rating Category
 
 		annotation SummarizationSetBy = Automatic
 
@@ -309,10 +370,80 @@ table 'HR Analytics'
 		mode: import
 		source =
 				let
-				    Source = Python.Execute("import kagglehub#(lf)import os#(lf)#(lf)try:#(lf)    # Print kaggle config location to debug#(lf)    print(f""Looking for kaggle.json in: {os.path.expanduser('~/.kaggle')}"")#(lf)    #(lf)    # Download dataset#(lf)    path = kagglehub.dataset_download(""saadharoon27/hr-analytics-dataset"")#(lf)    print(""Path to dataset files:"", path)#(lf)    #(lf)    # List files in the path to verify#(lf)    files = os.listdir(path)#(lf)    print(""Files in directory:"", files)#(lf)    #(lf)    # Read the first file to make it available in Power BI#(lf)    import pandas as pd#(lf)    if files:#(lf)        df = pd.read_csv(os.path.join(path, files[0]))#(lf)        print(f""Loaded file: {files[0]}"")#(lf)except Exception as e:#(lf)    print(f""Error: {e}"")"),
-				    df1 = Source{[Name="df"]}[Value]
+				    // Source: Executes Python script to download Kaggle data and load into DataFrame 'df'
+				    Source = Python.Execute("import kagglehub#(lf)import os#(lf)import pandas as pd#(lf)#(lf)try:#(lf)    # Print kaggle config location to debug#(lf)    # print(f""Looking for kaggle.json in: {os.path.expanduser('~/.kaggle')}"")#(lf)    #(lf)    # Download dataset#(lf)    path = kagglehub.dataset_download(""saadharoon27/hr-analytics-dataset"")#(lf)    # print(""Path to dataset files:"", path)#(lf)    #(lf)    # List files in the path to verify#(lf)    files = os.listdir(path)#(lf)    # print(""Files in directory:"", files)#(lf)    #(lf)    # Read the first CSV file found#(lf)    if files:#(lf)        csv_path = os.path.join(path, files[0])#(lf)        # Check if file exists before reading#(lf)        if os.path.exists(csv_path):#(lf)            df = pd.read_csv(csv_path)#(lf)            # print(f""Loaded file: {files[0]}"")#(lf)        else:#(lf)            print(f""Error: File not found at {csv_path}"")#(lf)            df = pd.DataFrame() # Return empty dataframe on error#(lf)    else:#(lf)        print(""Error: No files found in dataset path."")#(lf)        df = pd.DataFrame() # Return empty dataframe on error#(lf)except Exception as e:#(lf)    print(f""Error: {e}"")#(lf)    df = pd.DataFrame() # Return empty dataframe on exception#(lf)"),
+				
+				    // Select the DataFrame from the Python result
+				    df1 = Source{[Name="df"]}[Value],
+				
+				    // Rename columns for readability
+				    #"Renamed Columns" = Table.RenameColumns(df1,{{"EmpID", "Employee ID"}, {"AgeGroup", "Age Group"}, {"BusinessTravel", "Business Travel"}, {"DailyRate", "Daily Rate"}, {"DistanceFromHome", "Distance From Home"}, {"EducationField", "Education Field"}, {"EmployeeCount", "Employee Count"}, {"EmployeeNumber", "Employee Number"}, {"EnvironmentSatisfaction", "Environment Satisfaction"}, {"HourlyRate", "Hourly Rate"}, {"JobInvolvement", "Job Involvement"}, {"JobLevel", "Job Level"}, {"JobRole", "Job Role"}, {"JobSatisfaction", "Job Satisfaction"}, {"MaritalStatus", "Marital Status"}, {"MonthlyIncome", "Monthly Income"}, {"SalarySlab", "Salary Slab"}, {"MonthlyRate", "Monthly Rate"}, {"NumCompaniesWorked", "Number Companies Worked"}, {"OverTime", "Over Time"}, {"PercentSalaryHike", "Percent Salary Hike"}, {"PerformanceRating", "Performance Rating"}, {"RelationshipSatisfaction", "Relationship Satisfaction"}, {"StandardHours", "Standard Hours"}, {"StockOptionLevel", "Stock Option Level"}, {"TotalWorkingYears", "Total Working Years"}, {"TrainingTimesLastYear", "Training Times Last Year"}, {"WorkLifeBalance", "Work Life Balance"}, {"YearsAtCompany", "Years At Company"}, {"YearsInCurrentRole", "Years In Current Role"}, {"YearsSinceLastPromotion", "Years Since Last Promotion"}, {"YearsWithCurrManager", "Years With Current Manager"}}),
+				
+				    // Change data types, correcting Years With Current Manager to Int64
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Age", Int64.Type}, {"Daily Rate", Int64.Type}, {"Distance From Home", Int64.Type}, {"Education", Int64.Type}, {"Employee Count", Int64.Type}, {"Environment Satisfaction", Int64.Type}, {"Hourly Rate", Int64.Type}, {"Job Involvement", Int64.Type}, {"Job Level", Int64.Type}, {"Job Satisfaction", Int64.Type}, {"Monthly Income", Int64.Type}, {"Monthly Rate", Int64.Type}, {"Number Companies Worked", Int64.Type}, {"Percent Salary Hike", type number}, {"Performance Rating", Int64.Type}, {"Relationship Satisfaction", Int64.Type}, {"Standard Hours", Int64.Type}, {"Stock Option Level", Int64.Type}, {"Total Working Years", Int64.Type}, {"Training Times Last Year", Int64.Type}, {"Work Life Balance", Int64.Type}, {"Years At Company", Int64.Type}, {"Years In Current Role", Int64.Type}, {"Years Since Last Promotion", Int64.Type}, {"Years With Current Manager", Int64.Type}}), // Corrected type here
+				
+				    // Replace nulls with 0 in Years With Current Manager (assuming null means 0)
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",null,0,Replacer.ReplaceValue,{"Years With Current Manager"}),
+				
+				    // Remove columns that might be constant or redundant
+				    #"Removed Columns" = Table.RemoveColumns(#"Replaced Value",{"Employee Count", "Standard Hours", "Over18", "Employee ID"}),
+				
+				    // Add descriptive Attrition Status column
+				    #"Added Attrition Status" = Table.AddColumn(#"Removed Columns", "Attrition Status", each if [Attrition] = "Yes" then "Left" else "Stayed", type text),
+				
+				    // Add descriptive Over Time Status column (assuming source uses "Yes"/"No")
+				    #"Added Over Time Status" = Table.AddColumn(#"Added Attrition Status", "Over Time Status", each if [Over Time] = "Yes" then "Works Overtime" else "No Overtime", type text), // Corrected "yes" to "Yes"
+				
+				    // Add Tenure Group column with correct logic and referencing
+				    #"Added Tenure Group" = Table.AddColumn(#"Added Over Time Status", "Tenure Group", each
+				        if [Years At Company] <= 2 then "0-2 Years"
+				        else if [Years At Company] <= 5 then "3-5 Years"
+				        else if [Years At Company] <= 10 then "6-10 Years"
+				        else if [Years At Company] <= 20 then "11-20 Years"
+				        else "20+ Years", // Corrected logic and outputs
+				        type text),
+				
+				    // Add Satisfaction Category column with correct structure and referencing
+				    #"Added Job Satisfaction Category" = Table.AddColumn(#"Added Tenure Group", "Job Satisfaction Category", each if [Job Satisfaction] = 1 then "Low" else if [Job Satisfaction] = 2 then "Medium" else if [Job Satisfaction] = 3 then "High" else if [Job Satisfaction] = 4 then "Very High" else "Unknown", type text),
+				     // Add Environment Satisfaction Text column
+				    #"Added Env Satisfaction Text" = Table.AddColumn(#"Added Job Satisfaction Category", "Environment Satisfaction Category", each
+				        if [Environment Satisfaction] = 1 then "1 - Low"
+				        else if [Environment Satisfaction] = 2 then "2 - Medium"
+				        else if [Environment Satisfaction] = 3 then "3 - High"
+				        else if [Environment Satisfaction] = 4 then "4 - Very High"
+				        else "Unknown",
+				        type text),
+				
+				    // Add Relationship Satisfaction Text column
+				    #"Added Rel Satisfaction Text" = Table.AddColumn(#"Added Env Satisfaction Text", "Relationship Satisfaction Category", each
+				        if [Relationship Satisfaction] = 1 then "1 - Low"
+				        else if [Relationship Satisfaction] = 2 then "2 - Medium"
+				        else if [Relationship Satisfaction] = 3 then "3 - High"
+				        else if [Relationship Satisfaction] = 4 then "4 - Very High"
+				        else "Unknown",
+				        type text),
+				
+				    // Add Work Life Balance Text column (using standard 1-4 scale labels)
+				    #"Added WLB Text" = Table.AddColumn(#"Added Rel Satisfaction Text", "Work Life Balance Category", each
+				        if [Work Life Balance] = 1 then "1 - Bad" // Or "1 - Low" if preferred
+				        else if [Work Life Balance] = 2 then "2 - Good" // Or "2 - Medium"
+				        else if [Work Life Balance] = 3 then "3 - Better" // Or "3 - High"
+				        else if [Work Life Balance] = 4 then "4 - Best" // Or "4 - Very High"
+				        else "Unknown",
+				        type text),
+				
+				    // Add Performance Rating Text column (assuming 3=Excellent, 4=Outstanding)
+				    #"Added Perf Rating Text" = Table.AddColumn(#"Added WLB Text", "Performance Rating Category", each
+				        if [Performance Rating] = 1 then "1 - Low"
+				        else if [Performance Rating] = 2 then "2 - Good"
+				        else if [Performance Rating] = 3 then "3 - Excellent"
+				        else if [Performance Rating] = 4 then "4 - Outstanding"
+				        else "Unknown",
+				        type text)
+				
 				in
-				    df1
+				    // Ensure the final step name is referenced here
+				    #"Added Perf Rating Text"
 
 	annotation PBI_NavigationStepName = Navigation
 
