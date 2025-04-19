@@ -1,0 +1,320 @@
+table 'HR Analytics'
+	lineageTag: 3dc50488-e70d-4ee9-b9ec-9d7882ab0205
+
+	column EmpID
+		dataType: string
+		lineageTag: 268ddfec-8d0d-4406-8922-bea666fa90a2
+		summarizeBy: none
+		sourceColumn: EmpID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		lineageTag: 1aabce61-c76c-4192-be62-7cca07df6d4d
+		summarizeBy: none
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgeGroup
+		dataType: string
+		lineageTag: 20900840-b4a1-4e16-97a2-4fbb8fa140b5
+		summarizeBy: none
+		sourceColumn: AgeGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attrition
+		dataType: string
+		lineageTag: 523cf451-d39a-41a2-b0ce-0fcb66efea8f
+		summarizeBy: none
+		sourceColumn: Attrition
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessTravel
+		dataType: string
+		lineageTag: 96f86332-53c5-45d8-b8b1-77c6fa0b6756
+		summarizeBy: none
+		sourceColumn: BusinessTravel
+
+		annotation SummarizationSetBy = Automatic
+
+	column DailyRate
+		dataType: string
+		lineageTag: 5c3a64bd-2668-4d90-b2a8-4e963c84e39e
+		summarizeBy: none
+		sourceColumn: DailyRate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 9e745f96-8107-4d62-b963-ea38f1778b20
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistanceFromHome
+		dataType: string
+		lineageTag: dc53cee1-d599-4cc4-971e-86e1d3d66a56
+		summarizeBy: none
+		sourceColumn: DistanceFromHome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Education
+		dataType: string
+		lineageTag: 73883d2c-3ce1-4c80-a988-c08d327bc5a0
+		summarizeBy: none
+		sourceColumn: Education
+
+		annotation SummarizationSetBy = Automatic
+
+	column EducationField
+		dataType: string
+		lineageTag: a9304b40-1330-4288-8eae-1a1686a68ad0
+		summarizeBy: none
+		sourceColumn: EducationField
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeCount
+		dataType: string
+		lineageTag: 967c2fd4-3aae-4598-ad50-0dd93bbd192e
+		summarizeBy: none
+		sourceColumn: EmployeeCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeNumber
+		dataType: string
+		lineageTag: d65a413a-3962-4f55-a0f3-6c1715587495
+		summarizeBy: none
+		sourceColumn: EmployeeNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnvironmentSatisfaction
+		dataType: string
+		lineageTag: 072b0e78-fc5f-4df4-88eb-2a0c235d0c27
+		summarizeBy: none
+		sourceColumn: EnvironmentSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 19e3a544-4bab-40a7-b0d5-1f6d47c806e4
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column HourlyRate
+		dataType: string
+		lineageTag: 45a8054c-f4d5-4fb7-9937-c9741e3fddfa
+		summarizeBy: none
+		sourceColumn: HourlyRate
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobInvolvement
+		dataType: string
+		lineageTag: c6ce0e46-f826-415d-b765-ab4d178a5401
+		summarizeBy: none
+		sourceColumn: JobInvolvement
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobLevel
+		dataType: string
+		lineageTag: 9cd5cbcf-4296-4d9a-9e51-62faf1fc1833
+		summarizeBy: none
+		sourceColumn: JobLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobRole
+		dataType: string
+		lineageTag: 20aa2e87-99c1-4c32-988c-a90d65b03a20
+		summarizeBy: none
+		sourceColumn: JobRole
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobSatisfaction
+		dataType: string
+		lineageTag: 61ac85a4-9286-408c-9cef-5692881b1fbc
+		summarizeBy: none
+		sourceColumn: JobSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaritalStatus
+		dataType: string
+		lineageTag: 54742e13-3e76-4055-ac3a-04f30f12c186
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthlyIncome
+		dataType: string
+		lineageTag: 81a0cd2d-c41e-44a6-86dc-82219315b7fd
+		summarizeBy: none
+		sourceColumn: MonthlyIncome
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalarySlab
+		dataType: string
+		lineageTag: 9978fb4f-3d11-4b68-928d-f310fdd65504
+		summarizeBy: none
+		sourceColumn: SalarySlab
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthlyRate
+		dataType: string
+		lineageTag: b3613978-3659-49b1-85d5-c2591c680f43
+		summarizeBy: none
+		sourceColumn: MonthlyRate
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumCompaniesWorked
+		dataType: string
+		lineageTag: 264b9dc0-6f3c-49e9-87c6-7f81ce373add
+		summarizeBy: none
+		sourceColumn: NumCompaniesWorked
+
+		annotation SummarizationSetBy = Automatic
+
+	column Over18
+		dataType: string
+		lineageTag: 963d2214-2979-467d-9aab-809a81030ead
+		summarizeBy: none
+		sourceColumn: Over18
+
+		annotation SummarizationSetBy = Automatic
+
+	column OverTime
+		dataType: string
+		lineageTag: 891544ff-658d-4d91-9bca-19081ce5e657
+		summarizeBy: none
+		sourceColumn: OverTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column PercentSalaryHike
+		dataType: string
+		lineageTag: 0bc4a248-1758-4002-9127-b7b669844463
+		summarizeBy: none
+		sourceColumn: PercentSalaryHike
+
+		annotation SummarizationSetBy = Automatic
+
+	column PerformanceRating
+		dataType: string
+		lineageTag: 3c25cd47-1b09-4e35-9606-39e59410c0f9
+		summarizeBy: none
+		sourceColumn: PerformanceRating
+
+		annotation SummarizationSetBy = Automatic
+
+	column RelationshipSatisfaction
+		dataType: string
+		lineageTag: 0290c677-1e72-4c12-9788-8ed88dc89a46
+		summarizeBy: none
+		sourceColumn: RelationshipSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column StandardHours
+		dataType: string
+		lineageTag: 5056f7ef-db56-47bd-b783-f69ee425e6c8
+		summarizeBy: none
+		sourceColumn: StandardHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockOptionLevel
+		dataType: string
+		lineageTag: 40ccf9a5-61a5-4b3c-9c1e-ca0d940ff8e0
+		summarizeBy: none
+		sourceColumn: StockOptionLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalWorkingYears
+		dataType: string
+		lineageTag: 0b1dbf1d-3667-40b6-83ba-047f8bda0c63
+		summarizeBy: none
+		sourceColumn: TotalWorkingYears
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrainingTimesLastYear
+		dataType: string
+		lineageTag: 1f958e3c-dc64-4860-8e99-c5e832093657
+		summarizeBy: none
+		sourceColumn: TrainingTimesLastYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkLifeBalance
+		dataType: string
+		lineageTag: 00b05ea1-d318-44ea-b1d5-881e250901ac
+		summarizeBy: none
+		sourceColumn: WorkLifeBalance
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsAtCompany
+		dataType: string
+		lineageTag: 800a746a-a457-41f2-ab98-0955cecf449e
+		summarizeBy: none
+		sourceColumn: YearsAtCompany
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsInCurrentRole
+		dataType: string
+		lineageTag: 7852373e-05f9-43c8-8e8a-1d3185b25687
+		summarizeBy: none
+		sourceColumn: YearsInCurrentRole
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsSinceLastPromotion
+		dataType: string
+		lineageTag: ad271cdf-0376-492f-8502-1a86dd5a60ff
+		summarizeBy: none
+		sourceColumn: YearsSinceLastPromotion
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsWithCurrManager
+		dataType: string
+		lineageTag: 7f1698e9-44e6-46c6-b16b-aa98b0f48fc5
+		summarizeBy: none
+		sourceColumn: YearsWithCurrManager
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'HR Analytics' = m
+		mode: import
+		source =
+				let
+				    Source = Python.Execute("import kagglehub#(lf)import os#(lf)#(lf)try:#(lf)    # Print kaggle config location to debug#(lf)    print(f""Looking for kaggle.json in: {os.path.expanduser('~/.kaggle')}"")#(lf)    #(lf)    # Download dataset#(lf)    path = kagglehub.dataset_download(""saadharoon27/hr-analytics-dataset"")#(lf)    print(""Path to dataset files:"", path)#(lf)    #(lf)    # List files in the path to verify#(lf)    files = os.listdir(path)#(lf)    print(""Files in directory:"", files)#(lf)    #(lf)    # Read the first file to make it available in Power BI#(lf)    import pandas as pd#(lf)    if files:#(lf)        df = pd.read_csv(os.path.join(path, files[0]))#(lf)        print(f""Loaded file: {files[0]}"")#(lf)except Exception as e:#(lf)    print(f""Error: {e}"")"),
+				    df1 = Source{[Name="df"]}[Value]
+				in
+				    df1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
