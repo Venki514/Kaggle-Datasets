@@ -1,0 +1,48 @@
+table DimDepartment
+	lineageTag: 4b53eeee-3a1e-448d-a51b-cd3530df4dff
+
+	column DepartmentKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 18415020-e7ed-457f-92f3-fd28d3e2304e
+		summarizeBy: none
+		sourceColumn: DepartmentKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 1ace5a86-b647-4bea-8e5a-96c64f662920
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDepartment = m
+		mode: import
+		source =
+				let
+				    // Source: Reference the specific STEP in HR Analytics query BEFORE merges
+				    Source = HR_Analytics_Staging, // <-- IMPORTANT CHANGE HERE
+				
+				    // Keep only the Department column
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Department"}),
+				
+				    // Remove duplicate department names
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				
+				    // Remove rows where Department is null or empty (if any exist and you don't want them)
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([Department] <> null and [Department] <> "")),
+				
+				    // Add a unique surrogate key (index column)
+				    #"Added Index" = Table.AddIndexColumn(#"Filtered Rows", "DepartmentKey", 1, 1, Int64.Type),
+				
+				    // Reorder columns (optional, but good practice)
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Index",{"DepartmentKey", "Department"})
+				in
+				    #"Reordered Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

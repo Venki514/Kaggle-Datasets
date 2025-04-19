@@ -1,0 +1,8 @@
+relationship AutoDetected_43a572e7-9d06-411a-8e23-1de2352725a4
+	fromColumn: 'HR Analytics'.DepartmentKey
+	toColumn: DimDepartment.DepartmentKey
+
+relationship AutoDetected_bc4f74e3-a38c-4c5b-bbd6-b32ce071cd76
+	fromColumn: 'HR Analytics'.JobRoleKey
+	toColumn: DimJobRole.JobRoleKey
+

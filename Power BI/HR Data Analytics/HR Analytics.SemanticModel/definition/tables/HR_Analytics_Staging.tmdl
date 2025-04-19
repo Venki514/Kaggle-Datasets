@@ -1,0 +1,433 @@
+table HR_Analytics_Staging
+	isHidden
+	lineageTag: a99b91a0-d2fb-4205-819b-36de0b13433d
+
+	column Age
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 758d3545-4a17-4809-8eca-c1d73912b726
+		summarizeBy: sum
+		sourceColumn: Age
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Group'
+		dataType: string
+		isHidden
+		lineageTag: 0592de2a-6e0c-452c-9cc8-aebcf95f2152
+		summarizeBy: none
+		sourceColumn: Age Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attrition
+		dataType: string
+		isHidden
+		lineageTag: 0c58f527-4100-487e-9a67-f37e5a1c7ce4
+		summarizeBy: none
+		sourceColumn: Attrition
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Travel'
+		dataType: string
+		isHidden
+		lineageTag: eece426a-cd2f-43b7-9def-6b705c5060a4
+		summarizeBy: none
+		sourceColumn: Business Travel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Daily Rate'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1fb848a2-02b5-4d4a-bcaa-b9a7cb44cace
+		summarizeBy: sum
+		sourceColumn: Daily Rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		isHidden
+		lineageTag: 4587fc69-992c-4146-a217-f07ae4474e0c
+		summarizeBy: none
+		sourceColumn: Department
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Distance From Home'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c7c8c06b-37b3-49c4-9f6e-0cd0cc20c991
+		summarizeBy: sum
+		sourceColumn: Distance From Home
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Education
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 91b052c4-e849-4292-9cfb-7b41b07d1d09
+		summarizeBy: sum
+		sourceColumn: Education
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Education Field'
+		dataType: string
+		isHidden
+		lineageTag: 3ac05943-137f-493d-92b2-f011100fdb9a
+		summarizeBy: none
+		sourceColumn: Education Field
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Number'
+		dataType: string
+		isHidden
+		lineageTag: 6b490a28-061f-45ec-95bb-f7840496d9fd
+		summarizeBy: none
+		sourceColumn: Employee Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Environment Satisfaction'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 11afbae5-1efa-4248-b7ca-80fdbe03cb28
+		summarizeBy: sum
+		sourceColumn: Environment Satisfaction
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		isHidden
+		lineageTag: 5f3a2f9b-f4d9-4526-8842-ea57a716d271
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hourly Rate'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d070c7ef-4aa1-43b8-926e-4c227582d0e1
+		summarizeBy: sum
+		sourceColumn: Hourly Rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Involvement'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b5eebf87-754f-45c8-a162-68316a426eb7
+		summarizeBy: sum
+		sourceColumn: Job Involvement
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Level'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4213df88-ceaa-4423-b106-b3ba9b0dd3df
+		summarizeBy: sum
+		sourceColumn: Job Level
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Role'
+		dataType: string
+		isHidden
+		lineageTag: a00fe369-6e0f-4991-8f9b-68d8de3ee4a9
+		summarizeBy: none
+		sourceColumn: Job Role
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Satisfaction'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 14b89572-5cc1-4dcc-a72d-17a247f9149c
+		summarizeBy: sum
+		sourceColumn: Job Satisfaction
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Marital Status'
+		dataType: string
+		isHidden
+		lineageTag: 5e3dd946-6b3b-4d6f-a428-b47d745b9d15
+		summarizeBy: none
+		sourceColumn: Marital Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthly Income'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 56ab1a8b-cb84-41fc-b381-acae7d0beb0b
+		summarizeBy: sum
+		sourceColumn: Monthly Income
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salary Slab'
+		dataType: string
+		isHidden
+		lineageTag: dd0a3516-7618-4a32-83d4-8ccd090ec46c
+		summarizeBy: none
+		sourceColumn: Salary Slab
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthly Rate'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: af2d7743-fcdf-46fd-9c6f-0615f020025e
+		summarizeBy: sum
+		sourceColumn: Monthly Rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number Companies Worked'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f7f1eef9-287c-4bdd-9b8e-8d487cf74d30
+		summarizeBy: sum
+		sourceColumn: Number Companies Worked
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Over Time'
+		dataType: string
+		isHidden
+		lineageTag: fccffa84-ca5f-48a8-b525-c7bbfea6d6b5
+		summarizeBy: none
+		sourceColumn: Over Time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Percent Salary Hike'
+		dataType: double
+		isHidden
+		lineageTag: 6e207d47-e0e7-45ae-84c5-dbefc0080098
+		summarizeBy: sum
+		sourceColumn: Percent Salary Hike
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Performance Rating'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 12681cf9-875c-4a44-95b0-ca275145a1e4
+		summarizeBy: sum
+		sourceColumn: Performance Rating
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relationship Satisfaction'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6906a308-c930-4947-a852-eda3f70674d2
+		summarizeBy: sum
+		sourceColumn: Relationship Satisfaction
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stock Option Level'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a577ead5-b44c-4e1a-aedb-b225ba88863d
+		summarizeBy: sum
+		sourceColumn: Stock Option Level
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Working Years'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 967efb3a-9aa3-48bf-b08a-6a454f7f6f05
+		summarizeBy: sum
+		sourceColumn: Total Working Years
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Training Times Last Year'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 55e74552-0b28-4823-8100-f183ea0d27b8
+		summarizeBy: sum
+		sourceColumn: Training Times Last Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Life Balance'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9b001ded-b89d-4c7c-83ef-3296035d6f6e
+		summarizeBy: sum
+		sourceColumn: Work Life Balance
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Years At Company'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fb0d92c7-16bb-4c75-ac21-88810530bc06
+		summarizeBy: sum
+		sourceColumn: Years At Company
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Years In Current Role'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 36af233f-9274-42c0-8569-d3118780b478
+		summarizeBy: sum
+		sourceColumn: Years In Current Role
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Years Since Last Promotion'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0618da46-55c6-45eb-9513-176ad3037b73
+		summarizeBy: sum
+		sourceColumn: Years Since Last Promotion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Years With Current Manager'
+		dataType: double
+		isHidden
+		lineageTag: a26a3e7c-f244-4ea4-9147-da32de74477d
+		summarizeBy: sum
+		sourceColumn: Years With Current Manager
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition HR_Analytics_Staging = m
+		mode: import
+		source =
+				let
+				    // Source: Executes Python script to download Kaggle data and load into DataFrame 'df'
+				    Source = Python.Execute("import kagglehub#(lf)import os#(lf)import pandas as pd#(lf)#(lf)try:#(lf)    # Print kaggle config location to debug#(lf)    # print(f""Looking for kaggle.json in: {os.path.expanduser('~/.kaggle')}"")#(lf)    #(lf)    # Download dataset#(lf)    path = kagglehub.dataset_download(""saadharoon27/hr-analytics-dataset"")#(lf)    # print(""Path to dataset files:"", path)#(lf)    #(lf)    # List files in the path to verify#(lf)    files = os.listdir(path)#(lf)    # print(""Files in directory:"", files)#(lf)    #(lf)    # Read the first CSV file found#(lf)    if files:#(lf)        csv_path = os.path.join(path, files[0])#(lf)        # Check if file exists before reading#(lf)        if os.path.exists(csv_path):#(lf)            df = pd.read_csv(csv_path)#(lf)            # print(f""Loaded file: {files[0]}"")#(lf)        else:#(lf)            print(f""Error: File not found at {csv_path}"")#(lf)            df = pd.DataFrame() # Return empty dataframe on error#(lf)    else:#(lf)        print(""Error: No files found in dataset path."")#(lf)        df = pd.DataFrame() # Return empty dataframe on error#(lf)except Exception as e:#(lf)    print(f""Error: {e}"")#(lf)    df = pd.DataFrame() # Return empty dataframe on exception#(lf)"),
+				
+				    // Select the DataFrame from the Python result
+				    df1 = Source{[Name="df"]}[Value],
+				
+				    // Rename columns for readability
+				    #"Renamed Columns" = Table.RenameColumns(df1,{{"EmpID", "Employee ID"}, {"AgeGroup", "Age Group"}, {"BusinessTravel", "Business Travel"}, {"DailyRate", "Daily Rate"}, {"DistanceFromHome", "Distance From Home"}, {"EducationField", "Education Field"}, {"EmployeeCount", "Employee Count"}, {"EmployeeNumber", "Employee Number"}, {"EnvironmentSatisfaction", "Environment Satisfaction"}, {"HourlyRate", "Hourly Rate"}, {"JobInvolvement", "Job Involvement"}, {"JobLevel", "Job Level"}, {"JobRole", "Job Role"}, {"JobSatisfaction", "Job Satisfaction"}, {"MaritalStatus", "Marital Status"}, {"MonthlyIncome", "Monthly Income"}, {"SalarySlab", "Salary Slab"}, {"MonthlyRate", "Monthly Rate"}, {"NumCompaniesWorked", "Number Companies Worked"}, {"OverTime", "Over Time"}, {"PercentSalaryHike", "Percent Salary Hike"}, {"PerformanceRating", "Performance Rating"}, {"RelationshipSatisfaction", "Relationship Satisfaction"}, {"StandardHours", "Standard Hours"}, {"StockOptionLevel", "Stock Option Level"}, {"TotalWorkingYears", "Total Working Years"}, {"TrainingTimesLastYear", "Training Times Last Year"}, {"WorkLifeBalance", "Work Life Balance"}, {"YearsAtCompany", "Years At Company"}, {"YearsInCurrentRole", "Years In Current Role"}, {"YearsSinceLastPromotion", "Years Since Last Promotion"}, {"YearsWithCurrManager", "Years With Current Manager"}}),
+				
+				    // Change data types, correcting Years With Current Manager to Int64
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Age", Int64.Type}, {"Daily Rate", Int64.Type}, {"Distance From Home", Int64.Type}, {"Education", Int64.Type}, {"Employee Count", Int64.Type}, {"Environment Satisfaction", Int64.Type}, {"Hourly Rate", Int64.Type}, {"Job Involvement", Int64.Type}, {"Job Level", Int64.Type}, {"Job Satisfaction", Int64.Type}, {"Monthly Income", Int64.Type}, {"Monthly Rate", Int64.Type}, {"Number Companies Worked", Int64.Type}, {"Percent Salary Hike", type number}, {"Performance Rating", Int64.Type}, {"Relationship Satisfaction", Int64.Type}, {"Standard Hours", Int64.Type}, {"Stock Option Level", Int64.Type}, {"Total Working Years", Int64.Type}, {"Training Times Last Year", Int64.Type}, {"Work Life Balance", Int64.Type}, {"Years At Company", Int64.Type}, {"Years In Current Role", Int64.Type}, {"Years Since Last Promotion", Int64.Type}, {"Years With Current Manager", Int64.Type}}), // Corrected type here
+				
+				    // Replace nulls with 0 in Years With Current Manager (assuming null means 0)
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",null,0,Replacer.ReplaceValue,{"Years With Current Manager"}),
+				
+				    // Remove columns that might be constant or redundant
+				    #"Removed Columns" = Table.RemoveColumns(#"Replaced Value",{"Employee Count", "Standard Hours", "Over18", "Employee ID"})
+				in
+				    #"Removed Columns" // <-- End the staging query here
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

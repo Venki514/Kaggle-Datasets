@@ -47,14 +47,6 @@ table 'HR Analytics'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Department
-		dataType: string
-		lineageTag: 9e745f96-8107-4d62-b963-ea38f1778b20
-		summarizeBy: none
-		sourceColumn: Department
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Distance From Home'
 		dataType: int64
 		formatString: 0
@@ -133,14 +125,6 @@ table 'HR Analytics'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Job Role'
-		dataType: string
-		lineageTag: 20aa2e87-99c1-4c32-988c-a90d65b03a20
-		summarizeBy: none
-		sourceColumn: Job Role
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Job Satisfaction'
 		dataType: int64
 		formatString: 0
@@ -160,12 +144,14 @@ table 'HR Analytics'
 
 	column 'Monthly Income'
 		dataType: int64
-		formatString: 0
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 81a0cd2d-c41e-44a6-86dc-82219315b7fd
 		summarizeBy: sum
 		sourceColumn: Monthly Income
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column 'Salary Slab'
 		dataType: string
@@ -366,30 +352,71 @@ table 'HR Analytics'
 
 		annotation SummarizationSetBy = Automatic
 
+	column DepartmentKey
+		dataType: int64
+		formatString: 0
+		lineageTag: c6beecf8-081c-4994-8fa4-08227dae5057
+		summarizeBy: none
+		sourceColumn: DepartmentKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobRoleKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e4086cf-3b43-40be-aa7a-b4a6e70af41c
+		summarizeBy: none
+		sourceColumn: JobRoleKey
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'HR Analytics' = m
 		mode: import
-		source =
+		source = ```
 				let
 				    // Source: Executes Python script to download Kaggle data and load into DataFrame 'df'
-				    Source = Python.Execute("import kagglehub#(lf)import os#(lf)import pandas as pd#(lf)#(lf)try:#(lf)    # Print kaggle config location to debug#(lf)    # print(f""Looking for kaggle.json in: {os.path.expanduser('~/.kaggle')}"")#(lf)    #(lf)    # Download dataset#(lf)    path = kagglehub.dataset_download(""saadharoon27/hr-analytics-dataset"")#(lf)    # print(""Path to dataset files:"", path)#(lf)    #(lf)    # List files in the path to verify#(lf)    files = os.listdir(path)#(lf)    # print(""Files in directory:"", files)#(lf)    #(lf)    # Read the first CSV file found#(lf)    if files:#(lf)        csv_path = os.path.join(path, files[0])#(lf)        # Check if file exists before reading#(lf)        if os.path.exists(csv_path):#(lf)            df = pd.read_csv(csv_path)#(lf)            # print(f""Loaded file: {files[0]}"")#(lf)        else:#(lf)            print(f""Error: File not found at {csv_path}"")#(lf)            df = pd.DataFrame() # Return empty dataframe on error#(lf)    else:#(lf)        print(""Error: No files found in dataset path."")#(lf)        df = pd.DataFrame() # Return empty dataframe on error#(lf)except Exception as e:#(lf)    print(f""Error: {e}"")#(lf)    df = pd.DataFrame() # Return empty dataframe on exception#(lf)"),
+				    Source = HR_Analytics_Staging, 
 				
-				    // Select the DataFrame from the Python result
-				    df1 = Source{[Name="df"]}[Value],
+				     // Merge Department Key
+				    #"Merged Department" = Table.NestedJoin(
+				        Source,         // Table to merge into (current step)
+				        {"Department"},             // Key column(s) in the current table
+				        DimDepartment,              // Table to merge from (your Dim query)
+				        {"Department"},             // Key column(s) in the Dim table
+				        "DimDepartment",            // Name for the new column holding the merged table
+				        JoinKind.LeftOuter          // Keep all rows from HR Analytics
+				    ),
+				    #"Expanded DepartmentKey" = Table.ExpandTableColumn(
+				        #"Merged Department",
+				        "DimDepartment",
+				        {"DepartmentKey"},          // Column(s) to bring in from DimDepartment
+				        {"DepartmentKey"}           // New name for the expanded column
+				    ),
 				
-				    // Rename columns for readability
-				    #"Renamed Columns" = Table.RenameColumns(df1,{{"EmpID", "Employee ID"}, {"AgeGroup", "Age Group"}, {"BusinessTravel", "Business Travel"}, {"DailyRate", "Daily Rate"}, {"DistanceFromHome", "Distance From Home"}, {"EducationField", "Education Field"}, {"EmployeeCount", "Employee Count"}, {"EmployeeNumber", "Employee Number"}, {"EnvironmentSatisfaction", "Environment Satisfaction"}, {"HourlyRate", "Hourly Rate"}, {"JobInvolvement", "Job Involvement"}, {"JobLevel", "Job Level"}, {"JobRole", "Job Role"}, {"JobSatisfaction", "Job Satisfaction"}, {"MaritalStatus", "Marital Status"}, {"MonthlyIncome", "Monthly Income"}, {"SalarySlab", "Salary Slab"}, {"MonthlyRate", "Monthly Rate"}, {"NumCompaniesWorked", "Number Companies Worked"}, {"OverTime", "Over Time"}, {"PercentSalaryHike", "Percent Salary Hike"}, {"PerformanceRating", "Performance Rating"}, {"RelationshipSatisfaction", "Relationship Satisfaction"}, {"StandardHours", "Standard Hours"}, {"StockOptionLevel", "Stock Option Level"}, {"TotalWorkingYears", "Total Working Years"}, {"TrainingTimesLastYear", "Training Times Last Year"}, {"WorkLifeBalance", "Work Life Balance"}, {"YearsAtCompany", "Years At Company"}, {"YearsInCurrentRole", "Years In Current Role"}, {"YearsSinceLastPromotion", "Years Since Last Promotion"}, {"YearsWithCurrManager", "Years With Current Manager"}}),
+				    // Merge Job Role Key
+				    #"Merged Job Role" = Table.NestedJoin(
+				        #"Expanded DepartmentKey",   // Start from the result of the previous merge
+				        {"Job Role"},
+				        DimJobRole,
+				        {"Job Role"},
+				        "DimJobRole",
+				        JoinKind.LeftOuter
+				    ),
+				    #"Expanded JobRoleKey" = Table.ExpandTableColumn(
+				        #"Merged Job Role",
+				        "DimJobRole",
+				        {"JobRoleKey"},
+				        {"JobRoleKey"}
+				    ),
 				
-				    // Change data types, correcting Years With Current Manager to Int64
-				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Age", Int64.Type}, {"Daily Rate", Int64.Type}, {"Distance From Home", Int64.Type}, {"Education", Int64.Type}, {"Employee Count", Int64.Type}, {"Environment Satisfaction", Int64.Type}, {"Hourly Rate", Int64.Type}, {"Job Involvement", Int64.Type}, {"Job Level", Int64.Type}, {"Job Satisfaction", Int64.Type}, {"Monthly Income", Int64.Type}, {"Monthly Rate", Int64.Type}, {"Number Companies Worked", Int64.Type}, {"Percent Salary Hike", type number}, {"Performance Rating", Int64.Type}, {"Relationship Satisfaction", Int64.Type}, {"Standard Hours", Int64.Type}, {"Stock Option Level", Int64.Type}, {"Total Working Years", Int64.Type}, {"Training Times Last Year", Int64.Type}, {"Work Life Balance", Int64.Type}, {"Years At Company", Int64.Type}, {"Years In Current Role", Int64.Type}, {"Years Since Last Promotion", Int64.Type}, {"Years With Current Manager", Int64.Type}}), // Corrected type here
-				
-				    // Replace nulls with 0 in Years With Current Manager (assuming null means 0)
-				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",null,0,Replacer.ReplaceValue,{"Years With Current Manager"}),
-				
-				    // Remove columns that might be constant or redundant
-				    #"Removed Columns" = Table.RemoveColumns(#"Replaced Value",{"Employee Count", "Standard Hours", "Over18", "Employee ID"}),
+				    // Remove original text columns now that we have the keys
+				    #"Removed Original Dimensions" = Table.RemoveColumns(
+				        #"Expanded JobRoleKey",
+				        {"Department", "Job Role"} // Remove the original text columns
+				    ),
 				
 				    // Add descriptive Attrition Status column
-				    #"Added Attrition Status" = Table.AddColumn(#"Removed Columns", "Attrition Status", each if [Attrition] = "Yes" then "Left" else "Stayed", type text),
+				    #"Added Attrition Status" = Table.AddColumn( #"Removed Original Dimensions", "Attrition Status", each if [Attrition] = "Yes" then "Left" else "Stayed", type text),
 				
 				    // Add descriptive Over Time Status column (assuming source uses "Yes"/"No")
 				    #"Added Over Time Status" = Table.AddColumn(#"Added Attrition Status", "Over Time Status", each if [Over Time] = "Yes" then "Works Overtime" else "No Overtime", type text), // Corrected "yes" to "Yes"
@@ -444,6 +471,7 @@ table 'HR Analytics'
 				in
 				    // Ensure the final step name is referenced here
 				    #"Added Perf Rating Text"
+				```
 
 	annotation PBI_NavigationStepName = Navigation
 

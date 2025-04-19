@@ -1,0 +1,48 @@
+table DimJobRole
+	lineageTag: e9680d46-e5d1-4a56-97b6-6628ef5021f5
+
+	column JobRoleKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 509ef3d0-a5ef-402f-b8d8-63cd224fa6d1
+		summarizeBy: none
+		sourceColumn: JobRoleKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Role'
+		dataType: string
+		lineageTag: 4d2212ee-8fc5-433e-b6d2-374e865d2014
+		summarizeBy: none
+		sourceColumn: Job Role
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimJobRole = m
+		mode: import
+		source =
+				let
+				    // Source: Reference the cleaned HR Analytics query (after renaming)
+				    Source = HR_Analytics_Staging, // Reference your main query name
+				
+				    // Keep only the Job Role column
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Job Role"}),
+				
+				    // Remove duplicate job roles
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				
+				    // Remove rows where Job Role is null or empty (if applicable)
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([Job Role] <> null and [Job Role] <> "")),
+				
+				    // Add a unique surrogate key (index column)
+				    #"Added Index" = Table.AddIndexColumn(#"Filtered Rows", "JobRoleKey", 1, 1, Int64.Type),
+				
+				    // Reorder columns
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Index",{"JobRoleKey", "Job Role"})
+				in
+				    #"Reordered Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
