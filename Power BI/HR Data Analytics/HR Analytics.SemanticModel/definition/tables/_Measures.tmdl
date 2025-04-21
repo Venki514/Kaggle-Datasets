@@ -93,6 +93,38 @@ table _Measures
 		displayFolder: Key Counts
 		lineageTag: e3da6c31-2f3b-4a08-9b86-1857f91955aa
 
+	measure 'Avg Performance Leavers' =
+			
+			CALCULATE (
+			    [Avg Performance Rating], // Uses the pre-existing Avg Performance Rating measure
+			    'HR Analytics'[Attrition Status] = "Left"
+			)
+		lineageTag: 7e744ea0-00d2-4d09-883c-b89eb1ef0d6d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Estimated Attrition Cost' =
+			
+			[Total Attrition] * 1.0   // '[Cost Per Turnover Parameter Value]' is the measure auto-created by the What-If Parameter
+		lineageTag: a2f37b77-929d-430f-b5a5-b103f63e6cba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overall Company Attrition Rate' = CALCULATE([Attrition Rate], ALL('HR Analytics'))
+		lineageTag: 3aeffd6f-d0fc-4563-bb6a-07d93b457d1c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overall Company Avg Job Satisfaction' = CALCULATE([Avg Job Satisfaction], ALL('HR Analytics'))
+		lineageTag: cee94fa9-389b-4a99-94ac-4f60367c3f8b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overall Company Avg Monthly Income' = CALCULATE([Avg Monthly Income], ALL('HR Analytics'))
+		lineageTag: dcaef2e5-d743-44e9-9755-bc40e84e6dd9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Measures = m
 		mode: import
 		source =
