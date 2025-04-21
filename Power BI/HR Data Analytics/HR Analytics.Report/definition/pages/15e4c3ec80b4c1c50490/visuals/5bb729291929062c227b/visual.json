@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "name": "5bb729291929062c227b",
+  "position": {
+    "x": 92.216748768472911,
+    "y": 83.349753694581281,
+    "z": 0,
+    "height": 467.29064039408865,
+    "width": 477.04433497536945,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Even though it reduces number of visuals displayed on the page and great flexibility,we actaully miss the side by side comparision of metriccs by each dimension."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

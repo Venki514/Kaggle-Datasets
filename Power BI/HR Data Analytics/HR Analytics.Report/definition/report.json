@@ -5,6 +5,11 @@
       "name": "CY24SU10",
       "reportVersionAtImport": "5.62",
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "CY23SU02004928999250780941.json",
+      "reportVersionAtImport": "5.62",
+      "type": "RegisteredResources"
     }
   },
   "layoutOptimization": "None",
@@ -45,6 +50,17 @@
           "name": "CY24SU10",
           "path": "BaseThemes/CY24SU10.json",
           "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "CY23SU02004928999250780941.json",
+          "path": "CY23SU02004928999250780941.json",
+          "type": "CustomTheme"
         }
       ]
     }

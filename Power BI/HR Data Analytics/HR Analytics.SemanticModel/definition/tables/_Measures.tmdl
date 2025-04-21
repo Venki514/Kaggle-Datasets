@@ -125,6 +125,85 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Is Max Attr Rate - Dept' =
+			
+			VAR CurrentRate = [Attrition Rate]
+			VAR MaxRateInContext =
+			    MAXX (
+			        ALLSELECTED ( DimDepartment[Department] ), // Considers only departments visible after slicer selections
+			        [Attrition Rate]
+			    )
+			RETURN
+			    IF ( NOT ISBLANK ( CurrentRate ) && CurrentRate = MaxRateInContext, 1 ) // Return 1 if it's the max, BLANK otherwise
+		formatString: 0
+		lineageTag: 4ec2aa5f-01b7-4b4f-b726-dc697d1a2c61
+
+	measure 'Is Max Attr Rate - Tenure' =
+			
+			VAR CurrentRate = [Attrition Rate]
+			VAR MaxRateInContext =
+			    MAXX (
+			        ALLSELECTED ( 'HR Analytics'[Tenure Group] ), // Use the Tenure Group column from your fact/dim table
+			        [Attrition Rate]
+			    )
+			RETURN
+			    IF ( NOT ISBLANK ( CurrentRate ) && CurrentRate = MaxRateInContext, 1 )
+		formatString: 0
+		lineageTag: 802c1d2d-6694-4774-9c47-a5cb1bc07458
+
+	measure 'Is Max Attr Rate - OverTime' =
+			
+			VAR CurrentRate = [Attrition Rate]
+			VAR MaxRateInContext =
+			    MAXX (
+			        ALLSELECTED ( 'HR Analytics'[Over Time Status] ), // Use the Over Time Status column
+			        [Attrition Rate]
+			    )
+			RETURN
+			    IF ( NOT ISBLANK ( CurrentRate ) && CurrentRate = MaxRateInContext, 1 )
+		formatString: 0
+		lineageTag: 469413cd-62c6-459c-a4e3-2f5f0ddf679a
+
+	measure 'Is Max Attr Rate - Salary' =
+			
+			VAR CurrentRate = [Attrition Rate]
+			VAR MaxRateInContext =
+			    MAXX (
+			        ALLSELECTED ( 'HR Analytics'[Salary Slab] ), // Use the Salary Slab column
+			        [Attrition Rate]
+			    )
+			RETURN
+			    IF ( NOT ISBLANK ( CurrentRate ) && CurrentRate = MaxRateInContext, 1 )
+		formatString: 0
+		lineageTag: fddcb2d0-c719-4dbb-b90f-afb04b6c2ad9
+
+	measure '% of Total Company Attrition' =
+			
+			DIVIDE (
+			    [Total Attrition],
+			    CALCULATE ( [Total Attrition], ALL('HR Analytics') ) // Removes all filters from the HR Analytics table
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e20c7cb3-8293-49fa-b650-f97a8e37ed8e
+
+	measure 'Leaver Overtime Rate' =
+			
+			DIVIDE (
+			    CALCULATE ( [Total Overtime Employees], 'HR Analytics'[Attrition Status] = "Left" ),
+			    [Total Attrition]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a8af3bee-0de4-4662-9f03-8fc63f1ddfb4
+
+	measure 'Leavers Count - Perf Excellent' =
+			
+			CALCULATE(
+			    [Total Attrition],
+			    'HR Analytics'[Performance Rating Category] = "3 - Excellent" // Or use numeric value if preferred
+			)
+		formatString: 0
+		lineageTag: c065c2e8-4d30-4ebf-90a4-0b90eff7c7fe
+
 	partition _Measures = m
 		mode: import
 		source =

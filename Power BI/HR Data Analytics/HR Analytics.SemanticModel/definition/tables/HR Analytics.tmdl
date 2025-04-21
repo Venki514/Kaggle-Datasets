@@ -154,6 +154,9 @@ table 'HR Analytics'
 		lineageTag: 9978fb4f-3d11-4b68-928d-f310fdd65504
 		summarizeBy: none
 		sourceColumn: Salary Slab
+		sortByColumn: 'Salary Slab Sort Order'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -305,6 +308,9 @@ table 'HR Analytics'
 		lineageTag: c37294eb-fd12-40e9-b922-c76d305023f9
 		summarizeBy: none
 		sourceColumn: Tenure Group
+		sortByColumn: 'Tenure Group sort order'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -369,6 +375,24 @@ table 'HR Analytics'
 		sourceColumn: JobRoleKey
 
 		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salary Slab Sort Order'
+		dataType: int64
+		formatString: 0
+		lineageTag: 73baa877-e2a8-475b-9b62-b901d9295b37
+		summarizeBy: sum
+		sourceColumn: Salary Slab Sort Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenure Group sort order'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b89763c-f188-47f0-94d4-1a981c6f5715
+		summarizeBy: sum
+		sourceColumn: Tenure Group sort order
 
 		annotation SummarizationSetBy = Automatic
 
@@ -468,11 +492,11 @@ table 'HR Analytics'
 				        else if [Performance Rating] = 3 then "3 - Excellent"
 				        else if [Performance Rating] = 4 then "4 - Outstanding"
 				        else "Unknown",
-				        type text)
-				
+				        type text),
+				    #"Added Salary Slab Sort Order" = Table.AddColumn(#"Added Perf Rating Text", "Salary Slab Sort Order", each if [Salary Slab] = "Upto 5k" then 1 else if [Salary Slab] = "5k-10k" then 2 else if [Salary Slab] = "10k-15k" then 3 else 4, Int64.Type),
+				    #"Added Conditional Column" = Table.AddColumn(#"Added Salary Slab Sort Order", "Tenure Group sort order", each if [Tenure Group] = "0-2 Years" then 1 else if [Tenure Group] = "3-5 Years" then 2 else if [Tenure Group] = "6-10 Years" then 3 else if [Tenure Group] = "11-20 Years" then 4 else 5,  Int64.Type)
 				in
-				    // Ensure the final step name is referenced here
-				    #"Added Perf Rating Text"
+				    #"Added Conditional Column"
 				```
 
 	annotation PBI_NavigationStepName = Navigation
